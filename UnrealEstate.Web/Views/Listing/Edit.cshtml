@@ -1,0 +1,94 @@
+﻿@model UnrealEstate.ViewModels.Catalog.Listings.ListingUpdateRequest
+
+@{
+    ViewData["Title"] = "Update listing";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <h1 class="mt-4">Update user</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active">Update Listing</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-header">
+            <a class="btn btn-success" asp-action="Index" asp-controller="Listing">Back to list</a>
+        </div>
+
+        <div class="card-body">
+            <div class="col-md-4">
+                <form asp-action="Edit" asp-controller="Listing" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="text" hidden asp-for="Id" />
+                    <div class="form-group">
+                        <label asp-for="AddressLine1" class="control-label"></label>
+                        <input type="text" asp-for="AddressLine1" class="form-control" />
+                        <span asp-validation-for="AddressLine1" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AddressLine2" class="control-label"></label>
+                        <input type="text" asp-for="AddressLine2" class="form-control" />
+                        <span asp-validation-for="AddressLine2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="City" class="control-label"></label>
+                        <input type="text" asp-for="City" class="form-control" />
+                        <span asp-validation-for="City" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Zip" class="control-label"></label>
+                        <input asp-for="Zip" class="form-control" />
+                        <span asp-validation-for="Zip" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="State" class="control-label"></label>
+                        <input asp-for="State" class="form-control" />
+                        <span asp-validation-for="State" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Status" class="control-label"></label>
+                        <select asp-for="Status">
+                            <option value=0>Active</option>
+                            <option value=1>Disable</option>
+                        </select>
+                        <span asp-validation-for="Status" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Beds" class="control-label"></label>
+                        <input asp-for="Beds" class="form-control" />
+                        <span asp-validation-for="Beds" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Size" class="control-label"></label>
+                        <input asp-for="Size" class="form-control" />
+                        <span asp-validation-for="Size" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BuiltYear" class="control-label"></label>
+                        <input asp-for="BuiltYear" class="form-control" />
+                        <span asp-validation-for="BuiltYear" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="StartingPrice" class="control-label"></label>
+                        <input asp-for="StartingPrice" class="form-control" />
+                        <span asp-validation-for="StartingPrice" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DueDate" class="control-label"></label>
+                        <input asp-for="DueDate" class="form-control" />
+                        <span asp-validation-for="DueDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label"></label>
+                        <input asp-for="Description" class="form-control" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,110 @@
+﻿@model UnrealEstate.ViewModels.Catalog.Listings.ListingCreateRequest
+
+@{
+    ViewData["Title"] = "Create listing";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="layoutAuthentication_content">
+    <main>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="card shadow-lg border-0 rounded-lg mt-5">
+                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Create listing</h3></div>
+                        <div class="card-body">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <form asp-action="Create" asp-controller="Listing" method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label class="small mb-1" asp-for="AddressLine1">Address line 1</label>
+                                    <input class="form-control py-4" id="inputFirstName" asp-for="AddressLine1" type="text" />
+                                </div>
+                                <span asp-validation-for="AddressLine1" class="text-danger"></span>
+                                <div class="form-group">
+                                    <label class="small mb-1" asp-for="AddressLine2">Address line 2</label>
+                                    <input class="form-control py-4" id="inputFirstName" asp-for="AddressLine2" type="text" />
+                                </div>
+                                <span asp-validation-for="AddressLine2" class="text-danger"></span>
+                                <div class="form-row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="small mb-1" asp-for="Zip">Zip</label>
+                                            <input class="form-control py-4" asp-for="Zip" type="number" min="0" />
+                                        </div>
+                                        <span asp-validation-for="Zip" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="small mb-1" asp-for="State">State</label>
+                                            <input class="form-control py-4" asp-for="State" type="text" />
+                                        </div>
+                                        <span asp-validation-for="State" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="small mb-1" asp-for="Beds">Beds</label>
+                                            <input class="form-control py-4" asp-for="Beds" type="number" />
+                                        </div>
+                                        <span asp-validation-for="Beds" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="small mb-1" asp-for="Size">Size</label>
+                                            <input class="form-control py-4" asp-for="Size" type="number" />
+                                        </div>
+                                        <span asp-validation-for="Size" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="small mb-1" asp-for="BuiltYear">Built year</label>
+                                            <input class="form-control py-4" asp-for="BuiltYear" type="number" />
+                                        </div>
+                                        <span asp-validation-for="BuiltYear" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="small mb-1" asp-for="StartingPrice">Starting price</label>
+                                            <input class="form-control py-4" asp-for="StartingPrice" type="number" />
+                                        </div>
+                                        <span asp-validation-for="StartingPrice" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="small mb-1" asp-for="City">City</label>
+                                            <input class="form-control py-4" asp-for="City" type="text" />
+                                        </div>
+                                        <span asp-validation-for="City" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="small mb-1" asp-for="DueDate">Due Date</label>
+                                            <input class="form-control py-4" asp-for="DueDate" type="date" />
+                                        </div>
+                                        <span asp-validation-for="DueDate" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="small mb-1" asp-for="ThumbnailImage">ThumbnailImage</label>
+                                    <input class="form-control" asp-for="ThumbnailImage" value="" />
+                                </div>
+                                <span asp-validation-for="ThumbnailImage" class="text-danger"></span>
+                                <div class="form-group">
+                                    <label class="small mb-1" asp-for="ListingNote">Listing Note</label>
+                                    <input class="form-control py-4" asp-for="ListingNote" type="text" />
+                                </div>
+                                <span asp-validation-for="ListingNote" class="text-danger"></span>
+                                <div class="form-group">
+                                    <label class="small mb-1" asp-for="Description">Description</label>
+                                    <input class="form-control py-4" id="inputFirstName" asp-for="Description" type="text" />
+                                </div>
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                                <div class="form-group mt-4 mb-0"><button type="submit" class="btn btn-primary btn-block">Submit</button></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

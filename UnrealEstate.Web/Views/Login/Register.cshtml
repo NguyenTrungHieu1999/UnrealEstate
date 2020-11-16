@@ -1,0 +1,103 @@
+﻿@model UnrealEstate.ViewModels.Catalog.Users.UserRegisterRequest
+
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string _googlesitekey = Configuration["reCAPTCHA:SiteKey"];
+}
+<div id="layoutAuthentication_content">
+    <main>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="card shadow-lg border-0 rounded-lg mt-5">
+                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Register</h3></div>
+                        <div class="card-body">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <form asp-action="Register" asp-controller="Login" method="post">
+                                <div class="form-row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="small mb-1" asp-for="FirstName">First Name</label>
+                                            <input class="form-control py-4" id="inputFirstName" asp-for="FirstName" type="text" />
+                                        </div>
+                                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="small mb-1" asp-for="LastName" for="inputLastName">Last Name</label>
+                                            <input class="form-control py-4" asp-for="LastName" id="inputLastName" type="text" />
+                                        </div>
+                                        <span asp-validation-for="LastName" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="small mb-1" asp-for="Email" for="inputEmailAddress">Email</label>
+                                    <input class="form-control py-4" asp-for="Email" id="inputEmailAddress" type="email" aria-describedby="emailHelp" />
+                                </div>
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                                <div class="form-row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="small mb-1" asp-for="UserName">User Name</label>
+                                            <input class="form-control py-4" asp-for="UserName" type="text" />
+                                        </div>
+                                        <span asp-validation-for="UserName" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="small mb-1" asp-for="Birthday">Birth Day</label>
+                                            <input class="form-control py-4" asp-for="Birthday" type="date" />
+                                        </div>
+                                        <span asp-validation-for="Birthday" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="small mb-1" asp-for="Password">Password</label>
+                                            <input class="form-control py-4" asp-for="Password" type="password" />
+                                        </div>
+                                        <span asp-validation-for="Password" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="small mb-1" asp-for="ConfirmPassword">ConfirmPassword</label>
+                                            <input class="form-control py-4" asp-for="ConfirmPassword" type="password" />
+                                        </div>
+                                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="small mb-1" asp-for="PhoneNumber">Phone Number</label>
+                                            <input class="form-control py-4" asp-for="PhoneNumber" type="text" />
+                                        </div>
+                                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label asp-for="Gender" class="small mb-1"></label>
+                                            <select class="form-control" asp-for="Gender">
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                        </div>
+                                        <span asp-validation-for="Gender" class="text-danger"></span>
+                                    </div>
+                                    <div class="g-recaptcha" data-type="image" data-sitekey=@_googlesitekey></div>
+                                </div>
+                                <div class="form-group mt-4 mb-0"><button type="submit" class="btn btn-primary btn-block">Submit</button></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+@section Scripts {
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+}

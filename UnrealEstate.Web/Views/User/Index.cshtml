@@ -1,0 +1,169 @@
+﻿@using UnrealEstate.ViewModels.Common;
+@model PagedResult<UnrealEstate.ViewModels.Catalog.Users.UserVm>
+
+@{
+    ViewData["Title"] = "List Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string role = ViewBag.Role;
+}
+<style>
+    #inner {
+        width: 20%;
+        margin: 0 auto;
+    }
+
+    #outer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+</style>
+<hr />
+<div class="container">
+    <div id="outer">
+        <div id="inner">
+            <!-- Button to Open the Modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                Search
+            </button>
+
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <form asp-action="Index" asp-controller="User">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Search</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <select name="OrderBy">
+                                        <option value="Email">Email</option>
+                                        <option value="UserName">Name</option>
+                                    </select>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="small mb-1">Email</label>
+                                            <input name="Email" class="form-control py-4" type="text" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="small mb-1">Name</label>
+                                            <input name="Name" class="form-control py-4" type="text" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="small mb-1">Offset</label>
+                                            <input min="0" name="Offset" class="form-control py-4" type="number" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="small mb-1">Limit</label>
+                                            <input min="0" name="Limit" class="form-control py-4" type="number" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <h1 class="mt-4">List User</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active">User</li>
+    </ol>
+    <div class="card mb-4">
+        @if (!string.IsNullOrEmpty(role))
+        {
+            <div class="card-header">
+                <h1 class="alert-danger">@role</h1>
+            </div>
+        }
+        else if (Model is null)
+        {
+            <div class="card-header">
+                <h1 class="alert-danger">Time out</h1>
+            </div>
+        }
+        else
+        {
+            <div class="card-header">
+                <a class="btn btn-success" asp-action="Create" asp-controller="User">Create user</a>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>UserName</th>
+                                <th>FirstName</th>
+                                <th>LastName</th>
+                                <th>Email</th>
+                                <th>PhoneNumber</th>
+                                <th>BirthDay</th>
+                                <th>Gender</th>
+                                <th>Status</th>
+                                <th>Options</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>UserName</th>
+                                <th>FirstName</th>
+                                <th>LastName</th>
+                                <th>Email</th>
+                                <th>PhoneNumber</th>
+                                <th>BirthDay</th>
+                                <th>Gender</th>
+                                <th>Status</th>
+                                <th>Options</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach (var item in Model.Items)
+                            {
+                                <tr>
+                                    <td>@item.UserName</td>
+                                    <td>@item.FirstName</td>
+                                    <td>@item.LastName</td>
+                                    <td>@item.Email</td>
+                                    <td>@item.PhoneNumber</td>
+                                    <td>@item.Birthday.ToShortDateString()</td>
+                                    <td>@item.Gender</td>
+                                    <td>@item.Status</td>
+                                    <td>
+                                        <a class="btn btn-info" href="/User/Edit/@item.Id">Edit</a>
+                                        @*<a class="btn btn-info" href="/User/Details/@item.Id">View</a>*@
+                                        <a class="btn btn-info" href="/User/Delete/@item.Id">Delete</a>
+                                        @*<a class="btn btn-info" href="/User/RoleAssign/@item.Id">RoleAssign</a>*@
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+    </div>
+</div>

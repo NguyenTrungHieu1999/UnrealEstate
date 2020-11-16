@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnrealEstate.Web", "UnrealEstate.Web\UnrealEstate.Web.csproj", "{A21FA0D5-5B01-447B-B3BA-13DD14BEA18F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnrealEstate.Data", "UnrealEstate.Data\UnrealEstate.Data.csproj", "{D0D8D34B-8EA8-4988-BA44-C7AEF3AD9AD2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnrealEstate.Utilities", "UnrealEstate.Utilities\UnrealEstate.Utilities.csproj", "{EF20DEB4-5BB2-4455-8F32-D7DFF5B4FC45}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnrealEstate.ViewModels", "UnrealEstate.ViewModels\UnrealEstate.ViewModels.csproj", "{A176BF59-5A49-4B2F-9B16-2B9D93DC0B79}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnrealEstate.Mapper", "UnrealEstate.Mapper\UnrealEstate.Mapper.csproj", "{8EE9DEB8-8A9E-4401-B40B-B9E1CD5C881A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnrealEstate.Repository", "UnrealEstate.Repository\UnrealEstate.Repository.csproj", "{C5747817-9F85-4755-A1EE-C57C9EE531F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A21FA0D5-5B01-447B-B3BA-13DD14BEA18F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A21FA0D5-5B01-447B-B3BA-13DD14BEA18F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A21FA0D5-5B01-447B-B3BA-13DD14BEA18F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A21FA0D5-5B01-447B-B3BA-13DD14BEA18F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0D8D34B-8EA8-4988-BA44-C7AEF3AD9AD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0D8D34B-8EA8-4988-BA44-C7AEF3AD9AD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0D8D34B-8EA8-4988-BA44-C7AEF3AD9AD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0D8D34B-8EA8-4988-BA44-C7AEF3AD9AD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF20DEB4-5BB2-4455-8F32-D7DFF5B4FC45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF20DEB4-5BB2-4455-8F32-D7DFF5B4FC45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF20DEB4-5BB2-4455-8F32-D7DFF5B4FC45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF20DEB4-5BB2-4455-8F32-D7DFF5B4FC45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A176BF59-5A49-4B2F-9B16-2B9D93DC0B79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A176BF59-5A49-4B2F-9B16-2B9D93DC0B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A176BF59-5A49-4B2F-9B16-2B9D93DC0B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A176BF59-5A49-4B2F-9B16-2B9D93DC0B79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EE9DEB8-8A9E-4401-B40B-B9E1CD5C881A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EE9DEB8-8A9E-4401-B40B-B9E1CD5C881A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EE9DEB8-8A9E-4401-B40B-B9E1CD5C881A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EE9DEB8-8A9E-4401-B40B-B9E1CD5C881A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5747817-9F85-4755-A1EE-C57C9EE531F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5747817-9F85-4755-A1EE-C57C9EE531F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5747817-9F85-4755-A1EE-C57C9EE531F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5747817-9F85-4755-A1EE-C57C9EE531F6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {831737D1-1760-49B4-9EDE-ADBCF0FF4AA0}
+	EndGlobalSection
+EndGlobal
